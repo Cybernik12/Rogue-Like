@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
+    private Interactable focus;
+
     [SerializeField]
     private CharacterController controller;
 
@@ -190,7 +192,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 100))
             {
-
+                
             }
         }
     }
@@ -208,8 +210,14 @@ public class ThirdPersonMovement : MonoBehaviour
                 if (interactable != null)
                 {
                     Debug.Log("Hit");
+                    SetFocus(interactable);
                 }
             }
         }
+    }
+
+    void SetFocus(Interactable newFocus)
+    {
+        focus = newFocus;
     }
 }

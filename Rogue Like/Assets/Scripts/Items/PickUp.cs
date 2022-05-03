@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
+    [SerializeField]
+    private Item item;
+
     private GameObject player;
     private PlayerStats playerStats;
 
@@ -24,10 +27,20 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.tag == "Player")
         {
             playerStats.Temp += 1;
-            Destroy(this.gameObject);
+            Debug.Log("Picking up" + item.Name);
+            bool wasPickedUp = Inventory.instance.Add(item);
+
+            new Equipment().Use();
+
+            if (wasPickedUp)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
+
 }

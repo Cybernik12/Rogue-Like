@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : CharacterStats
 {
 
     private int temp;
     private int health;
+
+
 
     public int Temp
     {
@@ -39,11 +41,14 @@ public class PlayerStats : MonoBehaviour
     {
         temp = 0;
         health = 3;
+
+        EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnEquipmentChanged(Equipment newItem, Equipment oldItem)
     {
 
     }
+
 }
