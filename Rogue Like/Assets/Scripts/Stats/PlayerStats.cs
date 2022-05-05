@@ -8,8 +8,6 @@ public class PlayerStats : CharacterStats
     private int temp;
     private int health;
 
-
-
     public int Temp
     {
         get
@@ -57,7 +55,12 @@ public class PlayerStats : CharacterStats
         {
             Damage.RemoveModifier(oldItem.DamageModifier);
         }
+    }
 
+    public override void Die()
+    {
+        base.Die();
+        PlayerManager.instance.KillPlayer(); // Kill the player
     }
 
 }

@@ -30,7 +30,6 @@ public class EquipmentManager : MonoBehaviour
 
     public void Equip (Equipment newItem)
     {
-        
         Equipment oldItem = null;
 
         if (currentEquipment != null)

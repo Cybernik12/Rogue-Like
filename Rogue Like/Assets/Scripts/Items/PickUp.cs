@@ -32,7 +32,7 @@ public class PickUp : MonoBehaviour
             // Debug.Log("Picking up" + item.Name);
             bool wasPickedUp = Inventory.instance.Add(item);
 
-            //item.Use();
+            // item.Use();
 
             if (wasPickedUp)
             {

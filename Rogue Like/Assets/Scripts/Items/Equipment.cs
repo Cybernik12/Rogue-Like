@@ -25,7 +25,7 @@ public class Equipment : Item
     {
         base.Use();
 
-        // EquipmentManager.instance.Equip(this);
+        EquipmentManager.instance.Equip(this);
     }
 
 }

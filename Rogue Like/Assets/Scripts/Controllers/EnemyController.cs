@@ -9,12 +9,14 @@ public class EnemyController : MonoBehaviour
 
     private Transform target;
     private NavMeshAgent agent;
+    private CharacterCombat combat;
 
     // Start is called before the first frame update
     void Start()
     {
         target = PlayerManager.instance.Player.transform;
         agent = GetComponent<NavMeshAgent>();
+        combat = GetComponent<CharacterCombat>();
     }
 
     // Update is called once per frame
@@ -28,7 +30,11 @@ public class EnemyController : MonoBehaviour
 
             if (distance <= agent.stoppingDistance)
             {
-                // Attack the target
+                CharacterStats targetStats = target.GetComponent<CharacterStats>();
+                if(targetStats != null)
+                {
+                    combat.Attack(targetStats); // Attack the target
+                }
                 FaceTarget();
             }
         }

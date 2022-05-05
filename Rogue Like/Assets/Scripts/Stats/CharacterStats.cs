@@ -25,6 +25,10 @@ public class CharacterStats : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
+        if (damage == null)
+        {
+            damage = new Stats();
+        }
     }
 
     public void TakeDamege(int damage)
