@@ -14,8 +14,6 @@ public class PickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hello");
-
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -31,10 +29,10 @@ public class PickUp : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             playerStats.Temp += 1;
-            Debug.Log("Picking up" + item.Name);
+            // Debug.Log("Picking up" + item.Name);
             bool wasPickedUp = Inventory.instance.Add(item);
 
-            new Equipment().Use();
+            //item.Use();
 
             if (wasPickedUp)
             {

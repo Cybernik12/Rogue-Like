@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Helmet of Madness
   icon: {fileID: 0}
   isDefaultItem: 0
+  damageModifier: 1

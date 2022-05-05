@@ -9,6 +9,19 @@ public class CharacterStats : MonoBehaviour
 
     private Stats damage;
 
+    public Stats Damage
+    {
+        get
+        {
+            return damage;
+        }
+
+        set
+        {
+            value = damage;
+        }
+    }
+
     private void Awake()
     {
         currentHealth = maxHealth;

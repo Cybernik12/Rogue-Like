@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Equipment", menuName = "Inventory/Equipment")]
 public class Equipment : Item
 {
+    [SerializeField]
     private int damageModifier;
 
     public int DamageModifier
@@ -24,8 +25,7 @@ public class Equipment : Item
     {
         base.Use();
 
-
-        EquipmentManager.instance.Equip(this);
+        // EquipmentManager.instance.Equip(this);
     }
 
 }
