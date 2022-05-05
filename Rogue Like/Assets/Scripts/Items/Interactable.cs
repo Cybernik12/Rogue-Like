@@ -10,22 +10,24 @@ public class Interactable : MonoBehaviour
 
     private bool hasInteracted = false;
 
+    public virtual void Interact()
+    {
+        // This method is meant to be overwritten
+    }
+
     private void Update()
     {
-        if (hasInteracted == false)
+        float distance = Vector3.Distance(player.position, transform.position);
+        if (distance <= radius && hasInteracted == false)
         {
-            float distance = Vector3.Distance(player.position, transform.position);
-            if (distance <= radius)
-            {
-                hasInteracted = true;
-            }
+            Interact();
+            hasInteracted = true;
         }
 
-        else
+        else if (distance > radius)
         {
             hasInteracted = false;
         }
-
     }
 
     private void OnDrawGizmosSelected()

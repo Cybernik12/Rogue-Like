@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Enemy : Interactable
 {
-    /*
+    
     public override void Interact()
     {
-
+        base.Interact();
+        // Attack the enemy;
     }
-    */
+    
 
     // Start is called before the first frame update
     void Start()
