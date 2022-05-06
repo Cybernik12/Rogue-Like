@@ -7,9 +7,7 @@ public class Stats
 {
 
     [SerializeField]
-    private int baseValue;
-
-    private List<int> modifiers = new List<int>();
+    private int baseValue = 1;
 
     public int BaseValue
     {
@@ -24,20 +22,14 @@ public class Stats
         }
     }
 
-    public void AddModifier (int modifier)
+    public void AddModifier (int newModifier)
     {
-        if (modifier != 0)
-        {
-            modifiers.Add(modifier);
-        }
+        baseValue = newModifier;
     }
 
-    public void RemoveModifier (int modifier)
+    public void RemoveModifier (int oldModifier)
     {
-        if (modifier != 0)
-        {
-            modifiers.Remove(modifier);
-        }
+        baseValue = oldModifier;
     }
 
 }

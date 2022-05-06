@@ -12,6 +12,8 @@ public class CharacterCombat : MonoBehaviour
     [SerializeField]
     private float attackDelay = 0.6f;
 
+    private float meleeRange;
+
     public event System.Action OnAttack;
 
     CharacterStats myStats;
@@ -26,6 +28,11 @@ public class CharacterCombat : MonoBehaviour
     void Update()
     {
         attackCooldown -= Time.deltaTime;
+
+        if (Input.GetKeyDown("space"))
+        {
+            Attack(myStats);
+        }
     }
 
     public void Attack (CharacterStats targetStats)
@@ -49,5 +56,13 @@ public class CharacterCombat : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         stats.TakeDamege(myStats.Damage.BaseValue);
+    }
+
+    private void LeftMouse()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            // Attack();
+        }
     }
 }

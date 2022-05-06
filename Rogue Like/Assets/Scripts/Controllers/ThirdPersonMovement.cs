@@ -15,7 +15,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField]
     private Transform player;
 
-    private Camera camera;
+    private new Camera camera;
     /*
     [SerializeField]
     private Animator animator;
@@ -220,4 +220,5 @@ public class ThirdPersonMovement : MonoBehaviour
     {
         focus = newFocus;
     }
+
 }

@@ -25,8 +25,13 @@ public class Enemy : Interactable
     public override void Interact()
     {
         base.Interact();
+
+        Debug.Log("Gay");
+
         // Attack the enemy;
         CharacterCombat playerCombat = playerManager.Player.GetComponent<CharacterCombat>();
+
+        Debug.Log(myStats.currentHealth);
 
         if (playerCombat != null)
         {
