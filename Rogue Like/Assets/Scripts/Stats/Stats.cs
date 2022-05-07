@@ -6,30 +6,30 @@ using UnityEngine;
 public class Stats
 {
 
-    [SerializeField]
-    private int baseValue = 1;
+    [SerializeField] private int baseValue = 1;
+    private int damage = 1;
 
-    public int BaseValue
+    public int IDamage
     {
         get
         {
-            return baseValue;
+            return damage;
         }
 
         set
         {
-            baseValue = value;
+            damage = value;
         }
     }
 
     public void AddModifier (int newModifier)
     {
-        baseValue = newModifier;
+        damage = newModifier;
     }
 
     public void RemoveModifier (int oldModifier)
     {
-        baseValue = oldModifier;
+        damage = oldModifier;
     }
 
 }

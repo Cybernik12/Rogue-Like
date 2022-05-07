@@ -43,6 +43,9 @@ public class EquipmentManager : MonoBehaviour
         }
 
         currentEquipment = newItem;
+
+        Debug.Log("newItem = " + newItem);
+        Debug.Log("oldItem = " + oldItem);
     }
 
 }

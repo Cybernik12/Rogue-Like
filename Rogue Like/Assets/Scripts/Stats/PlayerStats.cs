@@ -50,11 +50,12 @@ public class PlayerStats : CharacterStats
         {
             Damage.AddModifier(newItem.DamageModifier);
         }
-
+        /*
         if (oldItem != null)
         {
             Damage.RemoveModifier(oldItem.DamageModifier);
         }
+        */
     }
 
     public override void Die()

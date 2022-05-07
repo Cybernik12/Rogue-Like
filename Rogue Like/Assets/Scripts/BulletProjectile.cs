@@ -28,7 +28,7 @@ public class BulletProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == GameObject.FindGameObjectWithTag("Enemy"))
+        if (other.gameObject.tag == "Enemy")
         {
             CharacterStats targetStats = other.GetComponent<CharacterStats>();
             combat.ProjectileAttack(targetStats);

@@ -31,13 +31,12 @@ public class PickUp : MonoBehaviour
             playerStats.Temp += 1;
             // Debug.Log("Picking up" + item.Name);
             bool wasPickedUp = Inventory.instance.Add(item);
-
-            // item.Use();
-
+                        
             if (wasPickedUp)
             {
                 Destroy(this.gameObject);
             }
+            
         }
     }
 

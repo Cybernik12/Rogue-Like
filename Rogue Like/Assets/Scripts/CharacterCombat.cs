@@ -32,7 +32,7 @@ public class CharacterCombat : MonoBehaviour
     {
         if (attackCooldown <= 0f)
         {
-            targetStats.TakeDamege(myStats.Damage.BaseValue); // Temporary
+            targetStats.TakeDamege(myStats.Damage.IDamage); // Temporary
             // StartCoroutine(DoDamage(targetStats, attackDelay));
 
             if (OnAttack != null)
@@ -48,7 +48,7 @@ public class CharacterCombat : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        stats.TakeDamege(myStats.Damage.BaseValue);
+        stats.TakeDamege(myStats.Damage.IDamage);
     }
 
     public void ProjectileAttack(CharacterStats targetStats)

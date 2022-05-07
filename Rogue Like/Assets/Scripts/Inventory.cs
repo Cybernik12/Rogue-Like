@@ -35,8 +35,11 @@ public class Inventory : MonoBehaviour
         {
             if (items.Count >= space)
             {
+                Replace(item);
+                /*
                 Debug.Log("Not enough room.");
                 return false;
+                */
             }
 
             items.Add(item);
@@ -54,11 +57,19 @@ public class Inventory : MonoBehaviour
 
     public void Remove (Item item)
     {
+        // Here you add code to spawn new prefab of the old Item equiped
+        
         items.Remove(item);
 
         if (onItemChangedCallBack != null)
         {
             onItemChangedCallBack.Invoke();
         }
+    }
+
+    public void Replace (Item item)
+    {
+        items.Remove(item);
+        items.Add(item);
     }
 }
