@@ -5,12 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterStats))]
 public class CharacterCombat : MonoBehaviour
 {
-    [SerializeField]
-    private float attackSpeed = 1f;
+    [SerializeField] private float attackSpeed = 1f;
     private float attackCooldown = 0f;
 
-    [SerializeField]
-    private float attackDelay = 0.6f;
+    [SerializeField] private float attackDelay = 0.6f;
 
     private float meleeRange;
 
@@ -28,11 +26,6 @@ public class CharacterCombat : MonoBehaviour
     void Update()
     {
         attackCooldown -= Time.deltaTime;
-
-        if (Input.GetKeyDown("space"))
-        {
-            Attack(myStats);
-        }
     }
 
     public void Attack (CharacterStats targetStats)
@@ -58,11 +51,8 @@ public class CharacterCombat : MonoBehaviour
         stats.TakeDamege(myStats.Damage.BaseValue);
     }
 
-    private void LeftMouse()
+    public void ProjectileAttack(CharacterStats targetStats)
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            // Attack();
-        }
+        Attack(targetStats);
     }
 }

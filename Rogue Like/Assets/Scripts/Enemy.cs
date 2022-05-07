@@ -26,12 +26,10 @@ public class Enemy : Interactable
     {
         base.Interact();
 
-        Debug.Log("Gay");
-
         // Attack the enemy;
         CharacterCombat playerCombat = playerManager.Player.GetComponent<CharacterCombat>();
 
-        Debug.Log(myStats.currentHealth);
+        // Debug.Log(myStats.currentHealth);
 
         if (playerCombat != null)
         {

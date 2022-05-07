@@ -6,14 +6,16 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     private Interactable focus;
 
-    [SerializeField]
-    private CharacterController controller;
+    [SerializeField] private CharacterController controller;
 
-    [SerializeField]
-    private Transform cam;
+    [SerializeField] private Transform cam;
 
-    [SerializeField]
-    private Transform player;
+    [SerializeField] private Transform player;
+
+    [SerializeField] private Transform bulletProjectile;
+    [SerializeField] private Transform spawnBulletPosition;
+
+    private Vector3 mouseWorldPosisiton;
 
     private new Camera camera;
     /*
@@ -65,14 +67,15 @@ public class ThirdPersonMovement : MonoBehaviour
         isWalking = animator.GetBool(isWalkingHash);
         isRunning = animator.GetBool(isRunningHash);
         */
+
+        mouseWorldPosisiton = Vector3.zero;
         center = this.transform.position;
 
         IsGrounded();
         Gravity();
         Move();
         Sprint();
-        LeftMouse();
-        RightMouse();
+        Shoot();
     }
 
     void IsGrounded()
@@ -183,42 +186,15 @@ public class ThirdPersonMovement : MonoBehaviour
         }
     }
 
-    void LeftMouse()
+    void Shoot()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+            // Attack();
+            Vector3 aimDir = (this.transform.forward - spawnBulletPosition.position).normalized;
 
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                
-            }
+            Instantiate(bulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(this.transform.forward, Vector3.up));
         }
-    }
-
-    void RightMouse()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
-                if (interactable != null)
-                {
-                    Debug.Log("Hit");
-                    SetFocus(interactable);
-                }
-            }
-        }
-    }
-
-    void SetFocus(Interactable newFocus)
-    {
-        focus = newFocus;
     }
 
 }
