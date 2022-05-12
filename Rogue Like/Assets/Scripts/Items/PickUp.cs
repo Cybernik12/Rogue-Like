@@ -9,7 +9,6 @@ public class PickUp : MonoBehaviour
     private Item item;
 
     private GameObject player;
-    private PlayerStats playerStats;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +19,7 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerStats = player.GetComponent<PlayerStats>();
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +27,6 @@ public class PickUp : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            playerStats.Temp += 1;
             // Debug.Log("Picking up" + item.Name);
             bool wasPickedUp = Inventory.instance.Add(item);
                         
