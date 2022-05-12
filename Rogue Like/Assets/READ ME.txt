@@ -1,3 +1,8 @@
+Nikolas Synodinos 1901877
+
+21-22SEM2AACIS062-3
+Advanced Games Programming 
+
 I did not manage to get everything working together, however the main components are there.
 
 I have tried to follow an Object-Oriented Programming as much as I could.
