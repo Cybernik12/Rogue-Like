@@ -1,0 +1,22 @@
+I did not manage to get everything working together, however the main components are there.
+
+I have tried to follow an Object-Oriented Programming as much as I could.
+
+What I have added are:
+
+ - Character Controller
+ - Inventory and Equipment system
+ - Item Interaction
+ - Enemy Script
+ - Combat System
+ - Procedural Generation
+
+I have managed to get everything working together apart from the Procedural Generation to work.
+
+Thus, I have added another level to demonstrate the Procedural Generation that I have added.
+You can find it in the main menu by pressing the "Procedural Generation" button.
+Then you can click the "Procedural Dungeon Generation" button to generate a dungeon.
+
+Or by opening the "Dungeon Generation Test" scene in the Unity editor.
+In the "Dungeon Generation Test" scene you can go to the "DungeonCreation" game object and press the "CreateNewDungeon" button, to generate a new dungeon layout.
+You can also change the parameters in the editor to directly change the Generation.
